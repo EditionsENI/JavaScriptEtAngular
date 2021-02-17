@@ -1,0 +1,68 @@
+<!-- C:\JavaScriptEtAngular\Angular\monProjetAngular\src\app\composants\c09\c09.components.html -->
+<div class="container text-center">
+    <p>Interpolation : {{maVariableAafficher}}</p>
+    <div>Une chaîne de caractères interpolée :
+        {{uneChaineDeCaractere}}</div>
+    <div>Un chiffre interpolé : {{unChiffre}}</div>
+    <div>Un objet interpolé :
+        <ul>
+            <li>Nom : {{unobjet.nom}}</li>
+            <li>Prénom : {{unobjet.prenom}}</li>
+            <li>Ville : {{unobjet.ville}}</li>
+        </ul>
+    </div>
+</div>
+<div class="container text-center">
+    <button class="btn btn-primary" (click)="unClic()">{{texteDuBouton}}</button>
+</div>
+
+<div class="container text-center">
+    <button class="btn btn-primary" (click)="unClic()">{{texteDuBouton}}</button>
+    <p *ngIf="true">Cet élément est affiché</p>
+    <p *ngIf="false">Cet élément n'est pas affiché</p>
+</div>
+
+<div class="container text-center">
+    <button class="btn btn-primary" (click)="unClic()">{{texteDuBouton}}</button>
+    <p *ngIf="nbreDeClic%2 == 0">Le bouton a été cliqué un nombre pair de fois</p>
+</div>
+
+<div class="container text-center">
+    <div>
+        <button class="btn btn-primary" (click)="unClic()">{{texteDuBouton}}</button>
+    </div>
+    <p class="alert alert-primary">Le bouton a été cliqué un nombre<span
+            *ngIf="nbreDeClic%2 == 0; then siMonIfEstVrai else leElseDeMonIf"></span>
+        de fois
+    </p>
+
+    <ng-template #siMonIfEstVrai>
+        <span class="alert alert-danger">pair</span>
+    </ng-template>
+    <ng-template #leElseDeMonIf>
+        <span class="alert alert-warning">impair</span>
+    </ng-template>
+</div>
+
+<div class="container text-center">
+    <div *ngFor="let unSportif of sportifs; index as i; first as f;  
+ last as l; odd as o; even as e">' +
+        <b>{{unSportif}} : </b> son index : {{i}}, il est le premier de la liste : {{f}}, il est le dernier : {{l}},
+        c'est un nombre impair : {{o}}, c'est un nombre pair : {{e}}
+    </div>
+</div>
+
+<div class="container text-center">
+    <div *ngFor="let unSportif of sportifs; index as i; first as f; last as l; odd as o; even as e">
+        <div [ngSwitch]=unSportif>
+            <span *ngSwitchCase="'Laurence Cousin'"><strong>{{unSportif}}</strong></span>
+            <span *ngSwitchDefault>{{unSportif}}</span>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <h4 [class]="maClasse">Utilisation de ngClass</h4>
+    <button class="btn-primary" (click)="changeDeClasse()">
+        Change de classe</button>
+</div>
