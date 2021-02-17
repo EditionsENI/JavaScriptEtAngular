@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Les six premiers Pokémon : </h2>
+    <hr />
+    <div class="columns">
+        <div class="column">
+            <p>Dans l'ordre du Pokédex : </p>
+        </div>
+    </div>
+    <div class="columns is-multiline">
+        <ul class="menu-list column is-one-third" *ngFor="let  pokemon of pokemons">
+            <li>
+                <a>{{pokemon.nom}}</a>
+                <ul class="menu-list">
+                    <img src="{{pokemon.img}}" />
+                    <li>Nom : {{pokemon.nom}}</li>
+                    <li>Catégorie : <span *ngIf="pokemon.categorie; else na">{{pokemon.categorie}}</span></li>
+                    <li>Type : <span *ngIf="pokemon.type; else na">{{pokemon.type}}</span></li>
+                    <li>Taille : <span *ngIf="pokemon.taille; else na">{{pokemon.taille | number:'1.0-2'}} m</span></li>
+                    <li>Poids : <span *ngIf="pokemon.poids; else na">{{pokemon.poids | number:'1.0-2'}} kg</span></li>
+                    <ng-template #na>N/A</ng-template>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
