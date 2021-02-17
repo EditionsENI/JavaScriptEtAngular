@@ -1,0 +1,66 @@
+<div class="container text-center">
+    <div>{{replique}}</div><br />
+    <div>{{replique | lowercase}}</div>
+    <div>{{replique | uppercase}}</div>
+    <div>{{replique | titlecase}}</div>
+</div>
+
+<div class="container text-center">
+    <div>pi : {{unChiffre}}</div>
+    <br />
+    <div>{{unChiffre | number:'2.3-4'}}</div>
+    <br />
+</div>
+
+<div class="container text-center">
+    <div>Tesla M3 : {{teslaM3}}</div>
+    <br />
+    <div>48600,00€ => {{teslaM3 | currency: 'EUR' : 'symbol'}}</div>
+    <div>48600,00 EUR => {{teslaM3 | currency: 'EUR' : 'code'}}
+    </div>
+    <div>48600,00 euros, et pas très chère. => {{teslaM3 | currency: 'EUR' : 'euros, et pas très chère.'}}</div>
+    <div>48600 € => {{teslaM3 | currency: 'EUR' : 'symbol': ' 1.0-0'}}</div>
+    <br />
+</div>
+
+<div class="container text-center">
+    <div>Nous sommes le {{aujourdhui}}</div>
+    <div>Nous sommes le {{aujourdhui | date}}</div>
+    <div>Nous sommes le {{aujourdhui | date : 'shortDate'}}. Il est {{aujourdhui | date : 'shortTime'}}.</div>
+    <br />
+</div>
+
+<div class="container text-center">
+    <h3>Un objet</h3>
+    <div *ngFor="let unElement of unObjet | keyvalue">
+        {{unElement.key}} - {{unElement.value}}
+    </div>
+    <h3>Un dictionnaire</h3>
+    <div *ngFor="let unElement of undictionnaire | keyvalue">
+        {{unElement.key}} - {{unElement.value}}
+    </div>
+</div>
+
+<div class="container text-center">
+    <h3>Une chaine de caractère</h3>
+    <div>{{uneChaineDeCaractere | slice :0:30}}{{uneChaineDeCaractere | slice : 61:69}}</div>
+    <div>{{uneChaineDeCaractere | slice :0:30}}{{uneChaineDeCaractere | slice : -7}}</div>
+    <h3>Un tableau</h3>
+    <div *ngFor="let unElement of unTableau | slice:1:3">{{unElement}}</div>
+</div>
+
+<div class="container text-center">
+    <div>
+        <hr />
+        <p>Un objet :</p>
+        <div>{{unObject}}</div>
+        <hr />
+        <p>Le même objet en JSON :</p>
+        <div>{{unObject | json}}</div>
+        <hr />
+    </div>
+</div>
+
+<div class="container text-center">
+    <div>{{unePromesse | async}}</div>
+</div>
