@@ -1,0 +1,137 @@
+<!-- C:\JavaScriptEtAngular\Angular\monProjetAngular\src\app\ 
+composants\c13\c13.component.html -->
+<div class="container text-center">
+    <h2>Le composant C13</h2>
+    <hr />
+    <div class="row justify-content-md-center">
+        <div>
+            <form method="post">
+                <div class="form-group">
+                    <label>Nom : </label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Couleur : </label>
+                    <select class="form-control">
+                        <option selected>Blanc</option>
+                        <option>Bleu</option>
+                        <option>Noir</option>
+                        <option>Rouge</option>
+                        <option>Vert</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">Je suis majeur et vacciné</label>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+            <hr />
+        </div>
+    </div>
+</div>
+
+<!-- C:\JavaScriptEtAngular\Angular\monProjetAngular\src\app\ 
+composants\c13\c13.component.html -->
+<div class="container text-center">
+    <h2>Le composant C13</h2>
+    <hr />
+    <div class="row justify-content-md-center">
+        <div>
+            <form method="post" #nomDuFormulaire="ngForm">
+                <div>Valeurs du formulaire : {{nomDuFormulaire.value | json}}</div>
+                <hr />
+                <div class="form-group">
+                    <label>Nom : </label>
+                    <input type="text" class="form-control" name="nom" ngModel>
+                </div>
+                <div class="form-group">
+                    <label>Couleur : </label>
+                    <select class="form-control" name="couleur" ngModel>
+                        <option selected>Blanc</option>
+                        <option>Bleu</option>
+                        <option>Noir</option>
+                        <option>Rouge</option>
+                        <option>Vert</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="majeur" ngModel>
+                    <label class="form-check-label">Je suis majeur et vacciné </label>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+            <hr />
+        </div>
+    </div>
+</div>
+
+<!-- C:\JavaScriptEtAngular\Angular\monProjetAngular\src\app\ 
+composants\c13\c13.component.html -->
+<div class="container text-center">
+    <h2>Le composant C13</h2>
+    <hr />
+    <div class="row justify-content-md-center">
+        <div>
+            <form method="post" #nomDuFormulaire="ngForm">
+                <div>Valeurs du modèle : {{formulaire | json}}</div>
+                <hr />
+                <div class="form-group">
+                    <label>Nom : </label>
+                    <input type="text" class="form-control" name="nom" [(ngModel)]="formulaire.nom">
+                </div>
+                <div class="form-group">
+                    <label>Couleur : </label>
+                    <select class="form-control" name="couleur" [(ngModel)]="formulaire.couleur">
+                        <option selected>Blanc</option>
+                        <option>Bleu</option>
+                        <option>Noir</option>
+                        <option>Rouge</option>
+                        <option>Vert</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="majeur" [(ngModel)]="formulaire.majeur">
+                    <label class="form-check-label">Je suis majeur et vacciné</label>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+            <hr />
+        </div>
+    </div>
+</div>
+
+<!-- C:\JavaScriptEtAngular\Angular\monProjetAngular\src\app\ 
+composants\c13\c13.component.html -->
+<div class="container text-center">
+    <h2>Le composant C13</h2>
+    <hr />
+    <div class="row justify-content-md-center">
+        <div>
+            <form [formGroup]="monFormulaire" (ngSubmit)="auClic(monFormulaire.value)">
+                <div>Mes données de formulaire : {{monFormulaire.value | json}}</div>
+                <hr />
+                <div class="form-group">
+                    <label>Nom : </label>
+                    <input type="text" class="form-control" name="nom" formControlName="nom">
+                </div>
+                <div class="form-group">
+                    <label>Couleur : </label>
+                    <select class="form-control" name="couleur" formControlName="couleur">
+                        <option selected>Blanc</option>
+                        <option>Bleu</option>
+                        <option>Noir</option>
+                        <option>Rouge</option>
+                        <option>Vert</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="majeur" formControlName="majeur">
+                    <label class="form-check-label">Je suis majeur et vacciné </label>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+            <hr />
+        </div>
+    </div>
+</div>
