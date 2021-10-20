@@ -1,0 +1,12 @@
+<div>
+    <button (click)='cliqueSurLeBouton()'>Cliquez</button>
+    <p>{{message}}</p>
+</div>
+
+<div> 
+    <button (click)="affiche()">Afficher les citations</button> 
+    <ul *ngFor="let citation of citations; let index = index"> 
+        <li>{{citation}} <button (click)="supprime(index)">X 
+ </button></li> 
+    </ul> 
+ </div> 
