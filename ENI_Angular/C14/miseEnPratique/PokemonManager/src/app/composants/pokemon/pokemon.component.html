@@ -1,0 +1,11 @@
+<ul class="menu-list" *ngIf=pokemon>
+    <img src="{{pokemon.img}}" (click)="clicSurImage(pokemon.nom)" />
+    <li>Nom : {{pokemon.nom}}</li>
+    <li>Catégorie : <span *ngIf="pokemon.categorie; else na">{{pokemon.categorie}}</span></li>
+    <li>Type : <span *ngIf="pokemon.type; else na">{{pokemon.type}}</span></li>
+    <li>Taille : <span *ngIf="pokemon.taille; else na">{{pokemon.taille | number:'1.0-2'}} m</span>
+    </li>
+    <li>Poids : <span *ngIf="pokemon.poids; else na">{{pokemon.poids | number: '1.0-2'}} kg</span>
+    </li>
+    <ng-template #na>N/A</ng-template>
+</ul>
